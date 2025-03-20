@@ -1,0 +1,5 @@
+com\challenge\repository\ImageRepository.class
+com\challenge\controller\AnimalController.class
+com\challenge\model\ImageResponse.class
+com\challenge\AnimalMicroserviceApplication.class
+com\challenge\model\CaptureRequest.class

@@ -1,0 +1,24 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    image: my-camunda-challenge-app:latest
+    ports:
+      - "8080:8080"
+    volumes:
+      - animaldb-data:/app/data
+    environment:
+      - DB_URL=jdbc:h2:file:/app/data/animaldb
+volumes:
+  animaldb-data:
+	
+# BUILD & START >> docker-compose up --build
+# STOP          >> docker-compose down
+
+# How It Works
+# Build: docker-compose up --build uses the Dockerfile to create the my-camunda-challenge-app:latest image.
+
+# Run: docker-compose starts the container and injects DB_URL=jdbc:h2:file:/app/data/animaldb into the environment.
+
+# Spring Boot: At startup, Spring sees DB_URL and sets spring.datasource.url to jdbc:h2:file:/app/data/animaldb, overriding the default ./animaldb.
+
